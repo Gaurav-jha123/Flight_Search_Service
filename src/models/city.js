@@ -18,6 +18,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'City',
+    allowNull : false,
+    unique : true,    
   });
   return City;
 };
