@@ -2,7 +2,7 @@ const { City } = require('../models/index');
 
 
 class CityRepository{
-    async creatCity ({ name }){
+    async createCity ({ name }){
         try {
             const city = await City.create ({ name});
             return city;
@@ -25,9 +25,9 @@ class CityRepository{
 
     }
 
-    async updateCity(cityId , {name}){
+    async getCity(cityId , {name}){
         try {
-            const city = await City.findBy(cityId);
+            const city = await City.findByPk(cityId);
             return city;
         } catch (error) {
             console.log("Something went wrong in repo layer");
@@ -35,7 +35,7 @@ class CityRepository{
         }
     }
 
-    async getCity(cityId){
+    async updateCity(cityId, data){
         try{
             const city = await City.update(data, {
                 where : {
