@@ -1,6 +1,8 @@
 const express = require("express");
 const { NAME } = require('./config/serverConfig');
 const { PORT } = require('./config/serverConfig');
+
+const ApiRoutes = require('./routes/index'); // right now having only V1
 const bodyParser = require("body-parser");
 
 
