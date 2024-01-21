@@ -7,6 +7,7 @@ class CityRepository{
             const city = await City.create ({ name});
             return city;
         }catch (error){
+            throw {error};
             console.log("Something went wrong at repo layee willl handle better suing cutom eros and loggers");
         }
     }
