@@ -7,8 +7,8 @@ class CityRepository{
             const city = await City.create ({ name});
             return city;
         }catch (error){
-            throw {error};
             console.log("Something went wrong at repo layee willl handle better suing cutom eros and loggers");
+            throw {error};
         }
     }
 
@@ -26,7 +26,7 @@ class CityRepository{
 
     }
 
-    async getCity(cityId , {name}){
+    async getCity(cityId){
         try {
             const city = await City.findByPk(cityId);
             return city;
@@ -38,11 +38,15 @@ class CityRepository{
 
     async updateCity(cityId, data){
         try{
-            const city = await City.update(data, {
-                where : {
-                    id : cityId
-                }
-            });
+            // this also work but won't give udpated object
+            // const city = await City.update(data, {
+            //     where : {
+            //         id : cityId,
+            //     }
+            // });
+            const city = await City.findByPk(cityId);
+            city.name = data.name;
+            await city.save();
             return city;
         }catch(error){
             console.log("Something went wrong in repo layer");
