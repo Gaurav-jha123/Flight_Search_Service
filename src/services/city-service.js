@@ -45,9 +45,11 @@ class CityService{
         }
     }
 
-    async getAllCities(){
+    async getAllCities(filter){
         try {
-            const cities =  await this.cityRepository.getAllCities();
+            const cities =  await this.cityRepository.getAllCities({name : filter.name});
+            // name : filter.name this signifies only based on anme later on we 
+            //could come up wiht lots of key value pair 
             return cities;
         } catch (error) {
             console.log("Something went wrong at service layer");
