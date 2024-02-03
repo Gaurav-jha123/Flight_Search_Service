@@ -2,6 +2,8 @@ const express = require("express");
 const { NAME } = require('./config/serverConfig');
 const { PORT } = require('./config/serverConfig');
 const db = require('./models/index');
+const { Airplane } = require('./models/index');
+
 const sequelize = require('sequelize');
 const ApiRoutes = require('./routes/index'); // right now having only V1
 const bodyParser = require("body-parser");
@@ -20,6 +22,9 @@ const setupAndStartServer = async => {
         if(process.env.SYNC_DB){
             db.sequelize.sync({alter: true});
         }
+        // await Airplane.create({
+        //     modelNumber : 'Bombardier CRJ'
+        // })
     });
 }
 
