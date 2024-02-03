@@ -2,58 +2,58 @@ const { CityRepository } = require('../repository/index');
 // , we can ahve more here as in when required 
 
 
-class CityService{
-    constructor(){
+class CityService {
+    constructor() {
         this.cityRepository = new CityRepository();
     }
-    async createCity(data){
-        try{
+    async createCity(data) {
+        try {
             const city = await this.cityRepository.createCity(data);
             return city;
-        }catch(error){
+        } catch (error) {
             console.log("Something went wrong at service layer");
-            throw {error};
+            throw { error };
         }
     }
-    
-    async deleteCity(cityId){
-        try{
+
+    async deleteCity(cityId) {
+        try {
             const response = await this.cityRepository.deleteCity(cityId);
             return response;
-        }catch(error){
+        } catch (error) {
             console.log("Something went wrong at service layer");
-            throw {error};
+            throw { error };
         }
     }
-    async updateCity(cityId,data){
-        try{
-            const city = await this.cityRepository.updateCity(cityId,data);
+    async updateCity(cityId, data) {
+        try {
+            const city = await this.cityRepository.updateCity(cityId, data);
             return city;
-        }catch(error){
+        } catch (error) {
             console.log("Something went wrong at service layer");
-            throw {error};
+            throw { error };
         }
     }
 
-    async getCity(cityId){
-        try{
+    async getCity(cityId) {
+        try {
             const city = await this.cityRepository.getCity(cityId);
             return city;
-        }catch(error){
+        } catch (error) {
             console.log("Something went wrong at service layer");
-            throw {error};
+            throw { error };
         }
     }
 
-    async getAllCities(filter){
+    async getAllCities(filter) {
         try {
-            const cities =  await this.cityRepository.getAllCities({name : filter.name});
+            const cities = await this.cityRepository.getAllCities({ name: filter.name });
             // name : filter.name this signifies only based on anme later on we 
             //could come up wiht lots of key value pair 
             return cities;
         } catch (error) {
             console.log("Something went wrong at service layer");
-            throw {error};
+            throw { error };
         }
     }
 }
