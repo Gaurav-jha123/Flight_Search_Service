@@ -1,9 +1,9 @@
 const express = require("express");
 const { NAME } = require('./config/serverConfig');
-const { PORT } = require('./config/serverConfig');
+//const { PORT } = require('./config/serverConfig');
 const db = require('./models/index');
 const { Airplane } = require('./models/index');
-
+const PORT = 3001;
 const sequelize = require('sequelize');
 const ApiRoutes = require('./routes/index'); // right now having only V1
 const bodyParser = require("body-parser");
