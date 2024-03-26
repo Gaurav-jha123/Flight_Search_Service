@@ -1,9 +1,10 @@
 {
   "development": {
-    "username": "${process.env.MYSQL_USER}",
-    "password": "${process.env.MYSQL_PASSWORD}",
-    "database": "${process.env.MYSQL_DATABASE}",
-    "host": "127.0.0.1",
+    "username": "admin",
+    "password": "DbDev123678",
+    "database": "Flights_Search_DB_DEV",
+    "host": "flightdb.cr2gywamq077.ap-south-1.rds.amazonaws.com",
+    "port" : 3306,
     "dialect": "mysql"
   }
   ,
