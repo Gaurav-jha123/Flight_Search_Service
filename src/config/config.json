@@ -1,9 +1,8 @@
 {
   "development": {
     "username": "admin",
-    "password": "DbDev123678",
-    "database": "Flights_Search_DB_DEV",
-    "host": "flightdb.cr2gywamq077.ap-south-1.rds.amazonaws.com",
+    "password": "",
+    "database": "",
     "port" : 3306,
     "dialect": "mysql"
   }
