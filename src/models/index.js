@@ -10,18 +10,25 @@ const config = require(__dirname + '/../config/config.json')[env];
 const dotenv = require('dotenv');
 const db = {};
 
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-dotenv.config();
+console.log('Environment:', process.env.NODE_ENV);
+console.log('Database:', process.env.DEV_DATABASE);
+console.log('Username:', process.env.DEV_USERNAME);
+console.log('Password:', process.env.DEV_PASSWORD);
+console.log('Host:', process.env.DEV_HOST);
+console.log('Port:', process.env.DEV_PORT);
 
 let sequelize = new Sequelize(
-  process.env[`${env.toUpperCase()}_DATABASE`],
-  process.env[`${env.toUpperCase()}_USERNAME`],
-  process.env[`${env.toUpperCase()}_PASSWORD`],
+  process.env.DEV_DATABASE,
+  process.env.DEV_USERNAME,
+  process.env.DEV_PASSWORD,
   {
-    host: process.env[`${env.toUpperCase()}_HOST`],
-    port: process.env[`${env.toUpperCase()}_PORT`] || 3306,
-    dialect: config.dialect,
+    host: process.env.DEV_HOST,
+    port: process.env.DEV_PORT || 3306,
+    dialect: 'mysql',
   }
+  
 );
 // if (config.use_env_variable) {
 //   sequelize = new Sequelize(process.env[config.use_env_variable], config);

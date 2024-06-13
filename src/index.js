@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require('sequelize');
 const ApiRoutes = require('./routes/index'); // right now having only V1
 const bodyParser = require("body-parser");
-const dotenv = require('dotenv');
 
 
 const {Airpots, City} = require('./models/index');
