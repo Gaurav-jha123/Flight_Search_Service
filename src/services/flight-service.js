@@ -1,8 +1,8 @@
 const { FlightRepository, AirplaneRepository } = require('../repository/index');
-const {compareTime} = require('../utils/helper');
+const { compareTime } = require('../utils/helper');
+const logger = require('../utils/logger');
 
 class FlightService {
-
     constructor() {
         this.airplaneRepository = new AirplaneRepository();
         this.flightRepository = new FlightRepository();
@@ -10,51 +10,45 @@ class FlightService {
 
     async createFlight(data) {
         try {
-            if(!compareTime(data.arrivalTime, data.departureTime)){
-                throw { error : 'Did you reach even before the flight took of'};
+            if (!compareTime(data.arrivalTime, data.departureTime)) {
+                throw new Error('Arrival time must be after departure time');
             }
             const airplane = await this.airplaneRepository.getAirplane(data.airplaneId);
-            const flight = await this.flightRepository.createFlight(
-                { 
-                    ...data, totalSeats: airplane.capacity 
-                });
+            const flight = await this.flightRepository.createFlight({
+                ...data,
+                totalSeats: airplane.capacity
+            });
             return flight;
         } catch (error) {
-            console.log("Something went wrong at service layer");
-            throw { error };
+            logger.error('Error in FlightService.createFlight:', error);
+            throw new Error('Could not create flight');
         }
     }
 
     async getAllFlightData(data) {
-        try
-        {
-        const flights = await this.flightRepository.getAllFlights(data);
-        return flights;
-        }catch(error){
-            console.log("Something went wrong at service layer while fetching flight data");
-            throw {error};
+        try {
+            return await this.flightRepository.getAllFlights(data);
+        } catch (error) {
+            logger.error('Error in FlightService.getAllFlightData:', error);
+            throw new Error('Could not get flights');
         }
     }
 
-    async getFlight(flightId)
-    {
+    async getFlight(flightId) {
         try {
-           const flight =await this.flightRepository.getFlight(flightId);
-           return flight;
+            return await this.flightRepository.getFlight(flightId);
         } catch (error) {
-            console.log("Something went wrong in the service layer");
-           throw{error}; 
+            logger.error('Error in FlightService.getFlight:', error);
+            throw new Error('Could not get flight');
         }
     }
 
-    async updateFlight(flightId,data)
-    {
+    async updateFlight(flightId, data) {
         try {
-           const response =await this.flightRepository.updateFlight(flightId,data);
-           return response;
+            return await this.flightRepository.updateFlight(flightId, data);
         } catch (error) {
-            console.log("Something went wrong in the service layer");
-           throw{error}; 
+            logger.error('Error in FlightService.updateFlight:', error);
+            throw new Error('Could not update flight');
         }
     }
 }

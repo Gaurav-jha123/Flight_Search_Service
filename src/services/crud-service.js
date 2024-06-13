@@ -1,58 +1,52 @@
-//const { CrudRepository } = require('../repository/index');
-
-class CrudService{
-    constructor(repository){
+class CrudService {
+    constructor(repository) {
         this.repository = repository;
     }
 
-    async create(data){
+    async create(data) {
         try {
-            const res = await this.repository.create(data);
-            return res;
+            return await this.repository.create(data);
         } catch (error) {
-            console.log("Something went wrong at CRUD Serivce layer");
-            throw {error};
+            logger.error('Error in CrudService.create:', error);
+            throw new Error('Could not create resource');
         }
     }
 
-    async destroy(id){
+    async destroy(id) {
         try {
-            const res = await this.repository.destroy(id);
-            return res;
+            return await this.repository.destroy(id);
         } catch (error) {
-            console.log("Something went wrong at CRUD Serivce layer");
-            throw {error};
+            logger.error('Error in CrudService.destroy:', error);
+            throw new Error('Could not delete resource');
         }
     }
 
-    async get(){
+    async get(id) {
         try {
-            const res = await this.repository.get(id);
-            return res;
+            return await this.repository.get(id);
         } catch (error) {
-            console.log("Something went wrong at CRUD Serivce layer");
-            throw {error};
+            logger.error('Error in CrudService.get:', error);
+            throw new Error('Could not get resource');
         }
     }
 
-    async getAll(){
+    async getAll() {
         try {
-            const res = await this.repository.getAll();
-            return res;
+            return await this.repository.getAll();
         } catch (error) {
-            console.log("Something went wrong at CRUD Serivce layer");
-            throw {error};
+            logger.error('Error in CrudService.getAll:', error);
+            throw new Error('Could not get resources');
         }
     }
 
-    async update(id, data){
+    async update(id, data) {
         try {
-            const res = await this.repository.update(id, data)
-            return res;
+            return await this.repository.update(id, data);
         } catch (error) {
-            console.log("Something went wrong at CRUD Serivce layer");
-            throw {error};
+            logger.error('Error in CrudService.update:', error);
+            throw new Error('Could not update resource');
         }
     }
 }
+
 module.exports = CrudService;

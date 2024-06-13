@@ -10,10 +10,14 @@ const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize = new Sequelize(
-  process.env.MYSQL_DATABASE,
-  process.env.MYSQL_USER,
-  process.env.MYSQL_PASSWORD,
-  config
+  process.env[`${env.toUpperCase()}_DATABASE`],
+  process.env[`${env.toUpperCase()}_USERNAME`],
+  process.env[`${env.toUpperCase()}_PASSWORD`],
+  {
+    host: process.env[`${env.toUpperCase()}_HOST`],
+    port: process.env[`${env.toUpperCase()}_PORT`] || 3306,
+    dialect: config.dialect,
+  }
 );
 // if (config.use_env_variable) {
 //   sequelize = new Sequelize(process.env[config.use_env_variable], config);
