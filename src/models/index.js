@@ -12,13 +12,6 @@ const db = {};
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-console.log('Environment:', process.env.NODE_ENV);
-console.log('Database:', process.env.DEV_DATABASE);
-console.log('Username:', process.env.DEV_USERNAME);
-console.log('Password:', process.env.DEV_PASSWORD);
-console.log('Host:', process.env.DEV_HOST);
-console.log('Port:', process.env.DEV_PORT);
-
 let sequelize = new Sequelize(
   process.env.DEV_DATABASE,
   process.env.DEV_USERNAME,
