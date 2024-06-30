@@ -12,10 +12,10 @@ const specs = require('../swagger');
 
 const {Airpots, City} = require('./models/index');
 const city = require("./models/city");
-
+const cors = require('cors');
 const setupAndStartServer = async => {
     const app = express();
-
+    app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended : true}));
     app.use('/api' , ApiRoutes); 
