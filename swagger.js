@@ -11,6 +11,8 @@ const options = {
     servers: [
       {
         url: 'https://flight-search-service.onrender.com',
+        //url: 'http://localhost:3000', un commnet this tor tun this on localhost
+
         description: 'Prod server',
       },
     ],
