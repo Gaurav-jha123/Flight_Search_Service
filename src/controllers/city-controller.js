@@ -1,6 +1,6 @@
 const { CityService } = require("../services/index");
 const logger = require('../utils/logger');
-const { SuccessCodes, ServerErrorCodes } = require('../utils/error-codes');
+const { SuccessCodes, ServerErrorCodes, ClientErrorCodes } = require('../utils/error-codes');
 
 const cityService = new CityService();
 
@@ -34,14 +34,14 @@ const destroy = async (req, res) => {
     try {
         const response = await cityService.deleteCity(req.params.id);
         if (!response.success) {
-            return res.status(404).json({
+            return res.status(ClientErrorCodes.NOT_FOUND).json({
                 data: {},
                 success: false,
                 message: response.message,
                 err: {}
             });
         }
-        return res.status(200).json({
+        return res.status(SuccessCodes.OK).json({
             data: response,
             success: true,
             message: response.message,
