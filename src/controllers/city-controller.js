@@ -33,10 +33,18 @@ const create = async (req, res) => {
 const destroy = async (req, res) => {
     try {
         const response = await cityService.deleteCity(req.params.id);
-        return res.status(SuccessCodes.OK).json({
+        if (!response.success) {
+            return res.status(404).json({
+                data: {},
+                success: false,
+                message: response.message,
+                err: {}
+            });
+        }
+        return res.status(200).json({
             data: response,
             success: true,
-            message: 'Successfully deleted a city',
+            message: response.message,
             err: {}
         });
     } catch (error) {
