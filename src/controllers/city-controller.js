@@ -1,6 +1,7 @@
 const { CityService } = require("../services/index");
 const logger = require('../utils/logger');
 const { SuccessCodes, ServerErrorCodes, ClientErrorCodes } = require('../utils/error-codes');
+const client = require('../utils/redis-client')
 
 const cityService = new CityService();
 
@@ -58,12 +59,26 @@ const destroy = async (req, res) => {
     }
 };
 
+
 /**
  * Controller to get a city by ID
  */
 const get = async (req, res) => {
+    const cityId = req.params.id;
     try {
-        const response = await cityService.getCity(req.params.id);
+        const cachedCity = await client.get(`city:${cityId}`);
+        if (cachedCity) {
+            return res.status(SuccessCodes.OK).json({
+                data: JSON.parse(cachedCity),
+                success: true,
+                message: 'Successfully fetched the city from cache',
+                err: {}
+            });
+        }
+
+        // Fetch from database if not cached
+        const response = await cityService.getCity(cityId);
+        await client.set(`city:${cityId}`, JSON.stringify(response), { EX: 3600 }); // Cache for 1 hour
         return res.status(SuccessCodes.OK).json({
             data: response,
             success: true,
@@ -109,19 +124,28 @@ const update = async (req, res) => {
  */
 const getAll = async (req, res) => {
     try {
-        const cities = await cityService.getAllCities(req.query);
+        const cachedCities = await client.get('allCities');
+        if (cachedCities) {
+            return res.status(SuccessCodes.OK).json({
+                data: JSON.parse(cachedCities),
+                success: true,
+                message: 'Successfully fetched all the flight data from cache'
+            });
+        }
+
+        const response = await cityService.getAllCities(req.query);
+        await client.set('allCities', JSON.stringify(response), { EX: 30 });  // Cache the response
         return res.status(SuccessCodes.OK).json({
-            data: cities,
+            data: response,
             success: true,
-            message: 'Successfully fetched the cities',
-            err: {}
+            message: 'Successfully fetched all the flight data'
         });
     } catch (error) {
         logger.error('Error fetching cities:', error);
         return res.status(ServerErrorCodes.INTERNAL_SERVER_ERROR).json({
             data: {},
             success: false,
-            message: 'Unable to fetch all the cities',
+            message: 'Not able to fetch all the flight data',
             err: error.message
         });
     }
