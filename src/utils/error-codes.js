@@ -1,17 +1,18 @@
+const { StatusCodes } = require('http-status-codes');
+
 const ClientErrorCodes = Object.freeze({
-    BAD_REQUEST: 400,
-    UNAUTHORISED: 401,
-    NOT_FOUND: 404
+    BAD_REQUEST: StatusCodes.BAD_REQUEST, // 400
+    UNAUTHORIZED: StatusCodes.UNAUTHORIZED, // 401
+    NOT_FOUND: StatusCodes.NOT_FOUND // 404
 });
 
-// utils/error-codes.js
 module.exports = {
     SuccessCodes: {
-        OK: 200,
-        CREATED: 201
+        OK: StatusCodes.OK, // 200
+        CREATED: StatusCodes.CREATED // 201
     },
     ServerErrorCodes: {
-        INTERNAL_SERVER_ERROR: 500
+        INTERNAL_SERVER_ERROR: StatusCodes.INTERNAL_SERVER_ERROR // 500
     },
     ClientErrorCodes
 };
