@@ -1,6 +1,6 @@
 const express = require("express");
 const db = require('./models/index');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4001;
 const ApiRoutes = require('./routes/index'); // right now having only V1
 const bodyParser = require("body-parser");
 const swaggerUi = require('swagger-ui-express');

@@ -1,6 +1,7 @@
 const { FlightService } = require('../services/index');
 const logger = require('../utils/logger');
 const { SuccessCodes, ServerErrorCodes } = require('../utils/error-codes');
+const client = require('../utils/redis-client');
 
 const flightService = new FlightService();
 
@@ -35,18 +36,31 @@ const create = async (req, res) => {
 
 const getAll = async (req, res) => {
     try {
+        const cachedValue = await client.get('allFlights');
+        if (cachedValue) {
+            return res.status(SuccessCodes.OK).json({
+                data: JSON.parse(cachedValue),
+                success: true,
+                message: 'Successfully fetched all flight data from cache',
+                err: {}
+            });
+        }
+
         const response = await flightService.getAllFlightData(req.query);
+        await client.set('allFlights', JSON.stringify(response), { EX: 3600 }); // Cache for 1 hour
+
         return res.status(SuccessCodes.OK).json({
             data: response,
             success: true,
-            message: 'Successfully fetched all the flight data'
+            message: 'Successfully fetched all flight data',
+            err: {}
         });
     } catch (error) {
-        logger.error(error);
+        logger.error('Error fetching flights:', error);
         return res.status(ServerErrorCodes.INTERNAL_SERVER_ERROR).json({
             data: {},
             success: false,
-            message: 'Not able to fetch all the flight data',
+            message: 'Unable to fetch all flight data',
             err: error.message
         });
     }
@@ -54,23 +68,36 @@ const getAll = async (req, res) => {
 
 const get = async (req, res) => {
     try {
+        const cachedValue = await client.get(`flight_${req.params.id}`);
+        if (cachedValue) {
+            return res.status(SuccessCodes.OK).json({
+                data: JSON.parse(cachedValue),
+                success: true,
+                message: 'Successfully fetched the flight from cache',
+                err: {}
+            });
+        }
+
         const response = await flightService.getFlight(req.params.id);
+        await client.set(`flight_${req.params.id}`, JSON.stringify(response), { EX: 3600 }); // Cache for 1 hour
+
         return res.status(SuccessCodes.OK).json({
             data: response,
             success: true,
-            err: {},
-            message: 'Successfully fetched the flight'
+            message: 'Successfully fetched the flight',
+            err: {}
         });
     } catch (error) {
-        logger.error(error);
+        logger.error('Error fetching flight:', error);
         return res.status(ServerErrorCodes.INTERNAL_SERVER_ERROR).json({
             data: {},
             success: false,
-            message: 'Not able to fetch the flight',
+            message: 'Unable to fetch the flight',
             err: error.message
         });
     }
 };
+
 
 const update = async (req, res) => {
     try {
