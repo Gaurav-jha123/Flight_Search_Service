@@ -1,0 +1,44 @@
+{
+  error: ConnectionRefusedError [SequelizeConnectionRefusedError]: connect ECONNREFUSED ::1:3306
+      at ConnectionManager.connect (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:92:17)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async ConnectionManager._connect (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+      at async C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+      at async ConnectionManager.getConnection (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+      at async C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:305:26
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async City.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async CityRepository.getAllCities (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\city-repository.js:54:29)
+      at async CityService.getAllCities (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\city-service.js:51:20) {
+    parent: Error: connect ECONNREFUSED ::1:3306
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306,
+      fatal: true
+    },
+    original: Error: connect ECONNREFUSED ::1:3306
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306,
+      fatal: true
+    }
+  },
+  level: 'error',
+  message: 'Error in CityService.getAllCities:',
+  timestamp: '2024-07-06T10:46:35.079Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching cities: Could not get cities',
+  stack: 'Error: Could not get cities\n' +
+    '    at CityService.getAllCities (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\city-service.js:54:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\city-controller.js:136:26)',
+  timestamp: '2024-07-06T10:46:35.093Z'
+}
