@@ -42,3 +42,43 @@
     '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\city-controller.js:136:26)',
   timestamp: '2024-07-06T10:46:35.093Z'
 }
+{
+  level: 'error',
+  message: 'Error in create airport controller: error is not defined',
+  stack: 'ReferenceError: error is not defined\n' +
+    '    at getAirportsById (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\airport-controller.js:35:56)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-08-14T15:42:33.586Z'
+}
+{
+  level: 'error',
+  message: 'Error in create airport controller: error is not defined',
+  stack: 'ReferenceError: error is not defined\n' +
+    '    at getAirportsById (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\airport-controller.js:35:56)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-08-14T15:43:13.309Z'
+}
+{
+  level: 'error',
+  message: 'Error in create airport controller: error is not defined',
+  stack: 'ReferenceError: error is not defined\n' +
+    '    at getAirportsById (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\airport-controller.js:35:56)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-08-14T15:43:57.646Z'
+}
+{
+  level: 'error',
+  message: 'Error in create airport controller: error is not defined',
+  stack: 'ReferenceError: error is not defined\n' +
+    '    at getAirportsById (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\airport-controller.js:35:56)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-08-14T15:44:17.084Z'
+}
+{
+  level: 'error',
+  message: 'Error in create airport controller: error is not defined',
+  stack: 'ReferenceError: error is not defined\n' +
+    '    at getAirportsById (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\airport-controller.js:35:56)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-08-14T15:44:58.828Z'
+}
