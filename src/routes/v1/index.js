@@ -495,4 +495,14 @@ router.patch('/flights/:id',flightsController.update)
  */
 router.post('/airports', airportController.create);
 
+router.get('/airports/:airportId', airportController.getAirportsById)
+
+router.get('/airports/', (req, res) => {
+    return res.status(400).json({
+        success: false,
+        message: "No Airport ID provided in req. Please provide an ID."
+    });
+});
+
+
 module.exports = router;
