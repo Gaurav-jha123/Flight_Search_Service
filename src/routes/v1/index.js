@@ -5,6 +5,7 @@ const { FlightMiddlewares } = require('../../middlewares/index');
 const cityController = require('../../controllers/city-controller');
 const flightsController  =  require('../../controllers/flight-controller');
 const airportController = require('../../controllers/airport-controller');
+const adminCheck = require('../../middlewares/adminCheckMiddleware');
 
 const router = express.Router();
 
@@ -64,7 +65,7 @@ router.get('/city',cityController.getAll);
  *                   type: string
  *                   description: The city name
  */
-router.post('/city' , cityController.create);  // i.e /v1/city
+router.post('/city' , adminCheck, cityController.create);  // i.e /v1/city
 /**
  * @swagger
  * /api/v1/city/{id}:
@@ -87,7 +88,7 @@ router.post('/city' , cityController.create);  // i.e /v1/city
  *         description: no city there with that id
  */
 
-router.delete('/city/:id' , cityController.destroy);  // i.e /v1/city  // same way in postman
+router.delete('/city/:id' ,adminCheck , cityController.destroy);  // i.e /v1/city  // same way in postman
 
 /**
  * @swagger
@@ -164,7 +165,7 @@ router.get('/city/:id', cityController.get);
  *       '400':
  *         description: Invalid ID supplied
  */
-router.patch('/city/:id',cityController.update);
+router.patch('/city/:id', adminCheck , cityController.update);
 /**
  * @swagger
  * /api/v1/flights:
@@ -242,16 +243,50 @@ router.patch('/city/:id',cityController.update);
  *       '500':
  *         description: Internal server error
  */
-router.post('/flights',
+router.post('/flights', adminCheck, 
 FlightMiddlewares.validateCreateFlight,
  flightsController.create );
-
- /**
+/**
  * @swagger
  * /api/v1/flights:
  *   get:
  *     summary: Get all flights
- *     description: Retrieve a list of all flights.
+ *     description: Retrieve a list of all flights with optional filtering and pagination.
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *           default: 1
+ *         description: The page number for pagination (default is 1)
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *           default: 10
+ *         description: The number of flights per page (default is 10)
+ *       - in: query
+ *         name: arrivalAirportId
+ *         schema:
+ *           type: integer
+ *         description: The arrival airport ID to filter flights by
+ *       - in: query
+ *         name: departureAirportId
+ *         schema:
+ *           type: integer
+ *         description: The departure airport ID to filter flights by
+ *       - in: query
+ *         name: minPrice
+ *         schema:
+ *           type: number
+ *           format: float
+ *         description: The minimum price to filter flights by
+ *       - in: query
+ *         name: maxPrice
+ *         schema:
+ *           type: number
+ *           format: float
+ *         description: The maximum price to filter flights by
  *     responses:
  *       '200':
  *         description: A JSON array of flights
@@ -292,6 +327,7 @@ FlightMiddlewares.validateCreateFlight,
  *       '500':
  *         description: Internal server error
  */
+
 router.get('/flights', flightsController.getAll);
 /**
  * @swagger
@@ -437,7 +473,7 @@ router.get('/flights/:id',flightsController.get);
  *       '500':
  *         description: Internal server error
  */
-router.patch('/flights/:id',flightsController.update)
+router.patch('/flights/:id', flightsController.update)
 
 /**
  * @swagger
@@ -493,7 +529,7 @@ router.patch('/flights/:id',flightsController.update)
  *       '500':
  *         description: Internal server error
  */
-router.post('/airports', airportController.create);
+router.post('/airports', adminCheck , airportController.create);
 
 router.get('/airports/:airportId', airportController.getAirportsById)
 

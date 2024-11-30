@@ -27,6 +27,8 @@ class FlightService {
 
     async getAllFlightData(data) {
         try {
+            console.log(`flight service layer is hit`);
+            
             return await this.flightRepository.getAllFlights(data);
         } catch (error) {
             logger.error('Error in FlightService.getAllFlightData:', error);

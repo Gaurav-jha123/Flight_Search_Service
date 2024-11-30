@@ -46,8 +46,9 @@ const getAll = async (req, res) => {
             });
         }
 
-        const response = await flightService.getAllFlightData(req.query);
-        await client.set('allFlights', JSON.stringify(response), { EX: 10 }); // Cache for 1 hour
+        console.log(`Hitting the controller layer with ${req}`);        
+        const response = await flightService.getAllFlightData(req);
+        await client.set('allFlights', JSON.stringify(response), { EX: 5 }); // Cache for 1 hour
 
         return res.status(SuccessCodes.OK).json({
             data: response,
