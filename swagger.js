@@ -10,10 +10,15 @@ const options = {
     },
     servers: [
       {
-        url: 'https://flight-search-service.onrender.com',
-        //url: 'http://localhost:3000', un commnet this tor tun this on localhost
+        //url: 'https://flight-search-service.onrender.com',
+        url: 'http://localhost:4001', //un commnet this tor tun this on localhost
 
-        description: 'Prod server',
+        description: 'Local server',
+      },
+      {
+        url: 'https://flight-search-service.onrender.com',
+
+        description: 'Prod server deployed on render',
       },
     ],
   },

@@ -82,3 +82,1956 @@
     '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
   timestamp: '2024-08-14T15:44:58.828Z'
 }
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.insert (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+      at async City.save (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:2490:35)
+      at async City.create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1362:12)
+      at async CityRepository.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\city-repository.js:9:26)
+      at async CityService.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\city-service.js:11:20)
+      at async create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\city-controller.js:13:22) {
+    name: 'SequelizeUniqueConstraintError',
+    errors: [
+      ValidationErrorItem {
+        message: 'name must be unique',
+        type: 'unique violation',
+        path: 'name',
+        value: 'Chandigarh',
+        origin: 'DB',
+        instance: City {
+          dataValues: {
+            id: null,
+            name: 'Chandigarh',
+            updatedAt: 2024-08-20T07:15:23.671Z,
+            createdAt: 2024-08-20T07:15:23.671Z
+          },
+          _previousDataValues: { name: undefined },
+          uniqno: 1,
+          _changed: Set(1) { 'name' },
+          _options: {
+            isNewRecord: true,
+            _schema: null,
+            _schemaDelimiter: '',
+            attributes: undefined,
+            include: undefined,
+            raw: undefined,
+            silent: undefined
+          },
+          isNewRecord: true
+        },
+        validatorKey: 'not_unique',
+        validatorName: null,
+        validatorArgs: []
+      }
+    ],
+    parent: Error: Duplicate entry 'Chandigarh' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'Chandigarh' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'Chandigarh', '2024-08-20 07:15:23', '2024-08-20 07:15:23' ]
+    },
+    original: Error: Duplicate entry 'Chandigarh' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'Chandigarh' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'Chandigarh', '2024-08-20 07:15:23', '2024-08-20 07:15:23' ]
+    },
+    fields: { name: 'Chandigarh' },
+    sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);'
+  },
+  level: 'error',
+  message: 'Error in CityService.createCity:',
+  timestamp: '2024-08-20T07:15:24.012Z'
+}
+{
+  level: 'error',
+  message: 'Error creating city: Could not create city',
+  stack: 'Error: Could not create city\n' +
+    '    at CityService.createCity (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\city-service.js:14:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async create (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\city-controller.js:13:22)',
+  timestamp: '2024-08-20T07:15:24.019Z'
+}
+{
+  error: ReferenceError: req is not defined
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:61:26)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-21T17:52:58.570Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-21T17:52:58.577Z'
+}
+{
+  error: ReferenceError: req is not defined
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:61:26)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-21T17:57:25.026Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-21T17:57:25.030Z'
+}
+{
+  error: ReferenceError: req is not defined
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:61:26)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-21T17:59:26.672Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-21T17:59:26.685Z'
+}
+{
+  error: ReferenceError: req is not defined
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:61:26)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-21T18:00:24.403Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-21T18:00:24.415Z'
+}
+{
+  error: ReferenceError: req is not defined
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:61:26)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-21T18:00:35.722Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-21T18:00:35.725Z'
+}
+{
+  error: ReferenceError: req is not defined
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:61:26)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-22T12:07:19.581Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-22T12:07:19.585Z'
+}
+{
+  error: ReferenceError: data is not defined
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:61:26)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-22T12:12:41.049Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-22T12:12:41.052Z'
+}
+{
+  error: Error: WHERE parameter "arrivalAirportId" has invalid "undefined" value
+      at MySQLQueryGenerator.whereItemQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1743:13)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1734:25
+      at Array.forEach (<anonymous>)
+      at MySQLQueryGenerator.whereItemsQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1732:35)
+      at MySQLQueryGenerator.getWhereConditions (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2075:19)
+      at MySQLQueryGenerator.selectQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:988:28)
+      at MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:47)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:66:29),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-22T12:38:07.123Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-22T12:38:07.127Z'
+}
+{
+  error: Error: WHERE parameter "arrivalAirportId" has invalid "undefined" value
+      at MySQLQueryGenerator.whereItemQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1743:13)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1734:25
+      at Array.forEach (<anonymous>)
+      at MySQLQueryGenerator.whereItemsQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1732:35)
+      at MySQLQueryGenerator.getWhereConditions (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2075:19)
+      at MySQLQueryGenerator.selectQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:988:28)
+      at MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:47)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:66:29),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-08-22T12:38:12.233Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-08-22T12:38:12.236Z'
+}
+{
+  level: 'error',
+  message: 'Error in create airport controller: error is not defined',
+  stack: 'ReferenceError: error is not defined\n' +
+    '    at getAirportsById (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\airport-controller.js:32:56)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-08-30T06:04:23.139Z'
+}
+{
+  level: 'error',
+  message: 'Error in create airport controller: error is not defined',
+  stack: 'ReferenceError: error is not defined\n' +
+    '    at getAirportsById (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\airport-controller.js:32:56)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-08-30T06:04:26.166Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.insert (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+      at async City.save (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:2490:35)
+      at async City.create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1362:12)
+      at async CityRepository.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\city-repository.js:9:26)
+      at async CityService.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\city-service.js:11:20)
+      at async create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\city-controller.js:13:22) {
+    name: 'SequelizeUniqueConstraintError',
+    errors: [
+      ValidationErrorItem {
+        message: 'name must be unique',
+        type: 'unique violation',
+        path: 'name',
+        value: 'testdata2',
+        origin: 'DB',
+        instance: City {
+          dataValues: {
+            id: null,
+            name: 'testdata2',
+            updatedAt: 2024-08-30T08:21:19.259Z,
+            createdAt: 2024-08-30T08:21:19.259Z
+          },
+          _previousDataValues: { name: undefined },
+          uniqno: 1,
+          _changed: Set(1) { 'name' },
+          _options: {
+            isNewRecord: true,
+            _schema: null,
+            _schemaDelimiter: '',
+            attributes: undefined,
+            include: undefined,
+            raw: undefined,
+            silent: undefined
+          },
+          isNewRecord: true
+        },
+        validatorKey: 'not_unique',
+        validatorName: null,
+        validatorArgs: []
+      }
+    ],
+    parent: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:21:19', '2024-08-30 08:21:19' ]
+    },
+    original: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:21:19', '2024-08-30 08:21:19' ]
+    },
+    fields: { name: 'testdata2' },
+    sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);'
+  },
+  level: 'error',
+  message: 'Error in CityService.createCity:',
+  timestamp: '2024-08-30T08:21:19.703Z'
+}
+{
+  level: 'error',
+  message: 'Error creating city: Could not create city',
+  stack: 'Error: Could not create city\n' +
+    '    at CityService.createCity (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\city-service.js:14:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async create (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\city-controller.js:13:22)',
+  timestamp: '2024-08-30T08:21:19.706Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.insert (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+      at async City.save (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:2490:35)
+      at async City.create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1362:12)
+      at async CityRepository.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\city-repository.js:9:26)
+      at async CityService.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\city-service.js:11:20)
+      at async create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\city-controller.js:13:22) {
+    name: 'SequelizeUniqueConstraintError',
+    errors: [
+      ValidationErrorItem {
+        message: 'name must be unique',
+        type: 'unique violation',
+        path: 'name',
+        value: 'testdata2',
+        origin: 'DB',
+        instance: City {
+          dataValues: {
+            id: null,
+            name: 'testdata2',
+            updatedAt: 2024-08-30T08:21:54.235Z,
+            createdAt: 2024-08-30T08:21:54.235Z
+          },
+          _previousDataValues: { name: undefined },
+          uniqno: 1,
+          _changed: Set(1) { 'name' },
+          _options: {
+            isNewRecord: true,
+            _schema: null,
+            _schemaDelimiter: '',
+            attributes: undefined,
+            include: undefined,
+            raw: undefined,
+            silent: undefined
+          },
+          isNewRecord: true
+        },
+        validatorKey: 'not_unique',
+        validatorName: null,
+        validatorArgs: []
+      }
+    ],
+    parent: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:21:54', '2024-08-30 08:21:54' ]
+    },
+    original: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:21:54', '2024-08-30 08:21:54' ]
+    },
+    fields: { name: 'testdata2' },
+    sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);'
+  },
+  level: 'error',
+  message: 'Error in CityService.createCity:',
+  timestamp: '2024-08-30T08:21:54.673Z'
+}
+{
+  level: 'error',
+  message: 'Error creating city: Could not create city',
+  stack: 'Error: Could not create city\n' +
+    '    at CityService.createCity (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\city-service.js:14:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async create (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\city-controller.js:13:22)',
+  timestamp: '2024-08-30T08:21:54.674Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.insert (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+      at async City.save (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:2490:35)
+      at async City.create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1362:12)
+      at async CityRepository.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\city-repository.js:9:26)
+      at async CityService.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\city-service.js:11:20)
+      at async create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\city-controller.js:13:22) {
+    name: 'SequelizeUniqueConstraintError',
+    errors: [
+      ValidationErrorItem {
+        message: 'name must be unique',
+        type: 'unique violation',
+        path: 'name',
+        value: 'testdata2',
+        origin: 'DB',
+        instance: City {
+          dataValues: {
+            id: null,
+            name: 'testdata2',
+            updatedAt: 2024-08-30T08:25:01.322Z,
+            createdAt: 2024-08-30T08:25:01.322Z
+          },
+          _previousDataValues: { name: undefined },
+          uniqno: 1,
+          _changed: Set(1) { 'name' },
+          _options: {
+            isNewRecord: true,
+            _schema: null,
+            _schemaDelimiter: '',
+            attributes: undefined,
+            include: undefined,
+            raw: undefined,
+            silent: undefined
+          },
+          isNewRecord: true
+        },
+        validatorKey: 'not_unique',
+        validatorName: null,
+        validatorArgs: []
+      }
+    ],
+    parent: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:25:01', '2024-08-30 08:25:01' ]
+    },
+    original: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:25:01', '2024-08-30 08:25:01' ]
+    },
+    fields: { name: 'testdata2' },
+    sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);'
+  },
+  level: 'error',
+  message: 'Error in CityService.createCity:',
+  timestamp: '2024-08-30T08:25:01.720Z'
+}
+{
+  level: 'error',
+  message: 'Error creating city: Could not create city',
+  stack: 'Error: Could not create city\n' +
+    '    at CityService.createCity (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\city-service.js:14:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async create (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\city-controller.js:13:22)',
+  timestamp: '2024-08-30T08:25:01.722Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.insert (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+      at async City.save (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:2490:35)
+      at async City.create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1362:12)
+      at async CityRepository.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\city-repository.js:9:26)
+      at async CityService.createCity (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\city-service.js:11:20)
+      at async create (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\city-controller.js:13:22) {
+    name: 'SequelizeUniqueConstraintError',
+    errors: [
+      ValidationErrorItem {
+        message: 'name must be unique',
+        type: 'unique violation',
+        path: 'name',
+        value: 'testdata2',
+        origin: 'DB',
+        instance: City {
+          dataValues: {
+            id: null,
+            name: 'testdata2',
+            updatedAt: 2024-08-30T08:25:40.797Z,
+            createdAt: 2024-08-30T08:25:40.797Z
+          },
+          _previousDataValues: { name: undefined },
+          uniqno: 1,
+          _changed: Set(1) { 'name' },
+          _options: {
+            isNewRecord: true,
+            _schema: null,
+            _schemaDelimiter: '',
+            attributes: undefined,
+            include: undefined,
+            raw: undefined,
+            silent: undefined
+          },
+          isNewRecord: true
+        },
+        validatorKey: 'not_unique',
+        validatorName: null,
+        validatorArgs: []
+      }
+    ],
+    parent: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:25:40', '2024-08-30 08:25:40' ]
+    },
+    original: Error: Duplicate entry 'testdata2' for key 'Cities.name'
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Execute.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_DUP_ENTRY',
+      errno: 1062,
+      sqlState: '23000',
+      sqlMessage: "Duplicate entry 'testdata2' for key 'Cities.name'",
+      sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);',
+      parameters: [ 'testdata2', '2024-08-30 08:25:40', '2024-08-30 08:25:40' ]
+    },
+    fields: { name: 'testdata2' },
+    sql: 'INSERT INTO `Cities` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);'
+  },
+  level: 'error',
+  message: 'Error in CityService.createCity:',
+  timestamp: '2024-08-30T08:25:41.200Z'
+}
+{
+  level: 'error',
+  message: 'Error creating city: Could not create city',
+  stack: 'Error: Could not create city\n' +
+    '    at CityService.createCity (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\city-service.js:14:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async create (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\city-controller.js:13:22)',
+  timestamp: '2024-08-30T08:25:41.201Z'
+}
+{
+  error: EagerLoadingError [SequelizeEagerLoadingError]: Airport is not associated to Flights!
+      at Flights._getIncludedAssociation (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:565:13)
+      at Flights._validateIncludedElement (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:502:53)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:421:37
+      at Array.map (<anonymous>)
+      at Flights._validateIncludedElements (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:417:39)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1124:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:89:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-14T13:07:06.836Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-14T13:07:06.840Z'
+}
+{
+  error: EagerLoadingError [SequelizeEagerLoadingError]: City is associated to Airport using an alias. You've included an alias (city), but it does not match the alias(es) defined in your association (City).
+      at Airport._getIncludedAssociation (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:574:15)
+      at Airport._validateIncludedElement (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:502:53)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:421:37
+      at Array.map (<anonymous>)
+      at Airport._validateIncludedElements (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:417:39)
+      at Flights._validateIncludedElement (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:557:38)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:421:37
+      at Array.map (<anonymous>)
+      at Flights._validateIncludedElements (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:417:39)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1124:12),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-14T13:31:27.778Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-14T13:31:27.781Z'
+}
+{
+  error: EagerLoadingError [SequelizeEagerLoadingError]: City is associated to Airport using an alias. You've included an alias (city), but it does not match the alias(es) defined in your association (City).
+      at Airport._getIncludedAssociation (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:574:15)
+      at Airport._validateIncludedElement (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:502:53)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:421:37
+      at Array.map (<anonymous>)
+      at Airport._validateIncludedElements (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:417:39)
+      at Flights._validateIncludedElement (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:557:38)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:421:37
+      at Array.map (<anonymous>)
+      at Flights._validateIncludedElements (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:417:39)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1124:12),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-14T13:37:40.045Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-14T13:37:40.049Z'
+}
+{
+  error: EagerLoadingError [SequelizeEagerLoadingError]: City is associated to Airport using an alias. You've included an alias (city), but it does not match the alias(es) defined in your association (City).
+      at Airport._getIncludedAssociation (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:574:15)
+      at Airport._validateIncludedElement (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:502:53)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:421:37
+      at Array.map (<anonymous>)
+      at Airport._validateIncludedElements (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:417:39)
+      at Flights._validateIncludedElement (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:557:38)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:421:37
+      at Array.map (<anonymous>)
+      at Flights._validateIncludedElements (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:417:39)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1124:12),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-14T15:04:43.613Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-14T15:04:43.617Z'
+}
+{
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read',
+  level: 'error',
+  message: 'Error fetching flights: read ECONNRESET',
+  stack: 'Error: read ECONNRESET\n' +
+    '    at TCP.onStreamRead (node:internal/stream_base_commons:217:20)',
+  timestamp: '2024-11-18T07:07:29.803Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:109:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:07:10.914Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:07:10.918Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:109:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-11-18%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-11-18%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-11-18%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:10:45.939Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:10:45.944Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:109:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, ' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:12:36.655Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:12:36.657Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:109:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:15:52.842Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:15:52.846Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:44:09.124Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:44:09.128Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:48:23.703Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:48:23.707Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:48:27.289Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:48:27.291Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:48:37.747Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:48:37.750Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:49:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:49:01.502Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:49:26)',
+  timestamp: '2024-11-18T13:49:01.506Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:30:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:51:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%') LIMIT 0, 10' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:56:36.974Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:33:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:51:26)',
+  timestamp: '2024-11-18T13:56:36.978Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:111:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:32:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:50:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Fli' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%Delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Uttarakhand%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T13:59:17.015Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:35:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:50:26)',
+  timestamp: '2024-11-18T13:59:17.019Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:111:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:32:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:50:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T14:02:50.030Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:35:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:50:26)',
+  timestamp: '2024-11-18T14:02:50.033Z'
+}
+{
+  error: Error
+      at Query.run (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sequelize.js:315:28
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async MySQLQueryInterface.select (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+      at async Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1140:21)
+      at async FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:111:29)
+      at async FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:32:20)
+      at async getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:50:26) {
+    name: 'SequelizeDatabaseError',
+    parent: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    original: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1
+        at Packet.asError (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packets\packet.js:728:17)
+        at Query.execute (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\commands\command.js:29:26)
+        at Connection.handlePacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:481:34)
+        at PacketParser.onPacket (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:97:12)
+        at PacketParser.executeStart (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\packet_parser.js:75:16)
+        at Socket.<anonymous> (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\mysql2\lib\connection.js:104:25)
+        at Socket.emit (node:events:513:28)
+        at addChunk (node:internal/streams/readable:324:12)
+        at readableAddChunk (node:internal/streams/readable:297:9)
+        at Readable.push (node:internal/streams/readable:234:10) {
+      code: 'ER_PARSE_ERROR',
+      errno: 1064,
+      sqlState: '42000',
+      sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Fligh' at line 1",
+      sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+      parameters: undefined
+    },
+    sql: "SELECT `Flights`.`id`, `Flights`.`flightNumber`, `Flights`.`departureTime`, `Flights`.`arrivalTime`, `Flights`.`price`, `departureAirport`.`id` AS `departureAirport.id`, `departureAirport`.`name` AS `departureAirport.name`, `departureAirport->city`.`id` AS `departureAirport.city.id`, `departureAirport->city`.`name` AS `departureAirport.city.name`, `arrivalAirport`.`id` AS `arrivalAirport.id`, `arrivalAirport`.`name` AS `arrivalAirport.name`, `arrivalAirport->city`.`id` AS `arrivalAirport.city.id`, `arrivalAirport->city`.`name` AS `arrivalAirport.city.name` FROM `Flights` AS `Flights` LEFT OUTER JOIN `Airports` AS `departureAirport` ON `Flights`.`departureAirportId` = `departureAirport`.`id` LEFT OUTER JOIN `Cities` AS `departureAirport->city` ON `departureAirport`.`cityId` = `departureAirport->city`.`id` LEFT OUTER JOIN `Airports` AS `arrivalAirport` ON `Flights`.`arrivalAirportId` = `arrivalAirport`.`id` LEFT OUTER JOIN `Cities` AS `arrivalAirport->city` ON `arrivalAirport`.`cityId` = `arrivalAirport->city`.`id` WHERE (`departureAirport->city`.`name` ILIKE '%delhi%' AND `arrivalAirport->city`.`name` ILIKE '%Karnataka%' AND `Flights`.`departureTime` LIKE '2024-06-15%') LIMIT 0, 10;",
+    parameters: {}
+  },
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T14:03:18.590Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:35:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:50:26)',
+  timestamp: '2024-11-18T14:03:18.595Z'
+}
+{
+  error: Error: Invalid value { undefined: '%delhi%' }
+      at Object.escape (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\sql-string.js:53:11)
+      at MySQLQueryGenerator.escape (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:763:22)
+      at MySQLQueryGenerator._whereParseSingleValueObject (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2057:41)
+      at MySQLQueryGenerator.whereItemQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1815:19)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1734:25
+      at Array.forEach (<anonymous>)
+      at MySQLQueryGenerator.whereItemsQuery (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1732:35)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1840:30
+      at Array.map (<anonymous>)
+      at MySQLQueryGenerator._whereGroupBind (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1839:21),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T14:09:12.047Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:35:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:50:26)',
+  timestamp: '2024-11-18T14:09:12.049Z'
+}
+{
+  error: ReferenceError: sequelize is not defined
+      at #createFilter (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:33:17)
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:52)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:32:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:50:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T14:21:51.630Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:35:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:50:26)',
+  timestamp: '2024-11-18T14:21:51.633Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'where')
+      at #createFilter (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:33:27)
+      at FlightRepository.getAllFlights (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\repository\flight-repository.js:110:52)
+      at FlightService.getAllFlightData (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\services\flight-service.js:32:48)
+      at getAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\src\controllers\flight-controller.js:50:46)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5),
+  level: 'error',
+  message: 'Error in FlightService.getAllFlightData:',
+  timestamp: '2024-11-18T14:25:23.539Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flights: Could not get flights',
+  stack: 'Error: Could not get flights\n' +
+    '    at FlightService.getAllFlightData (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:35:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getAll (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:50:26)',
+  timestamp: '2024-11-18T14:25:23.542Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-19T19:07:15.741Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-19T19:07:15.745Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-19T19:07:48.225Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-19T19:07:48.226Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T05:18:45.045Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T05:18:45.047Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T05:37:53.797Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T05:37:53.798Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T05:38:42.201Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T05:38:42.202Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T05:49:57.516Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T05:49:57.517Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T05:51:25.569Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T05:51:25.570Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T06:08:25.262Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T06:08:25.263Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T06:08:27.643Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T06:08:27.644Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T06:14:35.345Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T06:14:35.348Z'
+}
+{
+  error: TypeError: Cannot read properties of undefined (reading 'call')
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at String._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:598:30
+      at Array.forEach (<anonymous>)
+      at Flights._expandIncludeAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:597:14)
+      at Flights.findAll (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1117:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Flights.findOne (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1240:12)
+      at async Flights.findByPk (C:\Users\Gaurav_Jha\source\repos\AirLine Management\Flight_Search_Service\node_modules\sequelize\lib\model.js:1221:12),
+  level: 'error',
+  message: 'Error in FlightService.getFlight:',
+  timestamp: '2024-11-20T06:23:27.539Z'
+}
+{
+  level: 'error',
+  message: 'Error fetching flight: Could not get flight',
+  stack: 'Error: Could not get flight\n' +
+    '    at FlightService.getFlight (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\services\\flight-service.js:44:19)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async get (C:\\Users\\Gaurav_Jha\\source\\repos\\AirLine Management\\Flight_Search_Service\\src\\controllers\\flight-controller.js:82:26)',
+  timestamp: '2024-11-20T06:23:27.539Z'
+}
