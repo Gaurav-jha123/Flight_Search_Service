@@ -111,10 +111,10 @@ const update = async (req, res) => {
         });
     } catch (error) {
         logger.error(error);
-        return res.status(ServerErrorCodes.INTERNAL_SERVER_ERROR).json({
+        return res.status(error.statusCode || ServerErrorCodes.INTERNAL_SERVER_ERROR).json({
             data: {},
             success: false,
-            message: 'Not able to update the flight',
+            message: error.statusCode ? error.message : 'Not able to update the flight',
             err: error.message
         });
     }

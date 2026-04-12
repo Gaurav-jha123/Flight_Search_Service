@@ -1,11 +1,13 @@
 const axios = require('axios');
 
+const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL || 'http://localhost:3001';
+
 async function adminCheck(req, res, next) {
     try {
         console.log(`we are here at the admin check and we see that the id recived from header is ${req.headers['id']}`);
         
         const userId = req.headers['id'];
-        const response = await axios.get(`http://localhost:3001/api/v1/isAdmin/${userId}`);
+        const response = await axios.get(`${AUTH_SERVICE_URL}/api/v1/isAdmin/${userId}`);
 
         if (response.data.success && response.data.data) {
             // User is an admin

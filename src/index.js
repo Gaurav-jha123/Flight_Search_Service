@@ -7,7 +7,7 @@ const swaggerUi = require('swagger-ui-express');
 const specs = require('../swagger');
 
 const cors = require('cors');
-const setupAndStartServer = async => {
+const setupAndStartServer = async () => {
     const app = express();
     app.use(cors());
     app.use(bodyParser.json());

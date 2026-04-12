@@ -162,12 +162,39 @@ class FlightRepository {
                         id:flightId
                     }
                 });
-                return true; 
+                return await Flights.findByPk(flightId);
             } catch (error) {
                 console.log("Something went wrong in repository layer");
                 throw{error};
             }
         }
+
+    async adjustSeats(flightId, seatDelta) {
+        try {
+            return await sequelize.transaction(async (transaction) => {
+                const flight = await Flights.findByPk(flightId, {
+                    transaction,
+                    lock: transaction.LOCK.UPDATE
+                });
+
+                if (!flight) {
+                    return null;
+                }
+
+                const updatedSeats = flight.totalSeats + seatDelta;
+                if (updatedSeats < 0) {
+                    return false;
+                }
+
+                flight.totalSeats = updatedSeats;
+                await flight.save({ transaction });
+                return flight;
+            });
+        } catch (error) {
+            console.log("Something went wrong in repository layer while adjusting seats");
+            throw { error };
+        }
+    }
 }
 
         
